@@ -1,0 +1,27 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+
+<html data-csrf="{{ csrf_token }}">
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Decorations{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+</head>
+<body>
+
+<a href="/"><h1 class="title text-center">Decorations</h1></a>
+
+<div class="content row">
+    {% block content %}
+    {% endblock %}
+</div>
+
+{%  block script %}
+{%  endblock %}
+</body>
+</html>
