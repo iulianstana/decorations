@@ -6,5 +6,8 @@ class CategoryAdmin(admin.ModelAdmin):
     pass
 admin.site.register(Category, CategoryAdmin)
 
+class ImageAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Image, ImageAdmin)
 
 # Register your models here.
