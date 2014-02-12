@@ -18,13 +18,22 @@
 {%  block script %}
 {%  endblock %}
 
-<body>
+<body style="background:url('{% static 'img/background.jpg' %}')">
     <div id="used-space"> 
         <div id="header-space">
             <img id="header-img" src="{%static 'img/header.jpg' %}">
         </div>
         <div id="category-bar">
-            
+            <a href="{% url 'index' %}" class="button expand"
+                style="margin-bottom:1px">HOME</a>
+
+            {% for cat in category %}
+                <a href="{%url 'index' %}" class="button expand"
+                    style="margin-bottom:1px">{{ cat.name }}</a>
+            {% endfor %}
+
+            <a href="{% url 'index' %}" class="button expand"
+                style="margin-top:1px">Contact</a>
         </div>
         <div id="content-space">
             {% block content %}
