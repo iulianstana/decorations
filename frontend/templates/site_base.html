@@ -28,7 +28,7 @@
                 style="margin-bottom:1px">HOME</a>
 
             {% for cat in category %}
-                <a href="{%url 'index' %}" class="button expand"
+            <a href="{%url 'category' cat_id=cat.id %}" class="button expand"
                     style="margin-bottom:1px">{{ cat.name }}</a>
             {% endfor %}
 
