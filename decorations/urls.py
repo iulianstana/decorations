@@ -12,5 +12,9 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url(r'^category/(?P<cat_id>\d+)', CategoryView.as_view(), name='category'),
 
+    # MEDIA_URL = /imagedata/
+    url(r'^imagedata/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': settings.MEDIA_ROOT}),
+
     url(r'^admin/', include(admin.site.urls)),
 )

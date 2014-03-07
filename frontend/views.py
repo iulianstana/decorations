@@ -19,12 +19,11 @@ class IndexView(TemplateView):
 
 
 class CategoryView(TemplateView):
-    template_name = "index.html"
+    template_name = "category.html"
 
     def get(self, request, cat_id):
         category = Category.objects.all()
         images = Image.objects.filter(category_id = cat_id)
-        print images
         params = {
             'category': category,
             'images': images,
