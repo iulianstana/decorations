@@ -102,3 +102,7 @@ STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
             os.path.join(BASE_DIR, 'frontend', 'static'),
             )
+
+
+MEDIA_URL = '/imagedata/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
