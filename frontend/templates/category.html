@@ -9,22 +9,28 @@
 
 {% block content %}
 
-<div class="jcarousel-wrapper">
-<div class="jcarousel" data-jcarousel="true">
-    <ul>
-        <li>
-            <img src="{{images.0.fetch_url}}" width="600" height="400" alt="">
-        </li>
-        <li>
-            <img src="{{images.1.fetch_url}}" width="600" height="400" alt="">
-        </li>
-    </ul>
-</div>
+{% if images|length %}
+    <div class="jcarousel-wrapper">
 
-<a href="#" class="jcarousel-control-prev inactive" data-jcarouselcontrol="true">‹</a>
-<a href="#" class="jcarousel-control-next" data-jcarouselcontrol="true">›</a>
+        <div class="jcarousel" data-jcarousel="true">
+            <ul>
+                {% for image in images %}
+                <li>
+                    <img src="{{image.fetch_url}}" width="600" height="400"
+                                                                alt="">
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
 
-</div>
+        <a href="#" class="jcarousel-control-prev inactive"
+                                    data-jcarouselcontrol="true">‹</a>
+        <a href="#" class="jcarousel-control-next"
+                                    data-jcarouselcontrol="true">›</a>
+    </div>
+{% else %}
+    <p> There is no photo in this category </p>
+{% endif %}
 
 <div class="small-8 columns" id="img-viewer-div">
 
